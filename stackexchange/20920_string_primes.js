@@ -41,8 +41,8 @@ function isPrime(val) {
  t=tempory number
  */
 
-// A="0",P=[A+A],j=0,
-// (function (v){
+// A="0",P=[A+A],j=0;
+// function N(v){
 //   function Q(q) {
 //     i=0
 //     while(p=P[i++]) {
@@ -60,7 +60,12 @@ function isPrime(val) {
 //     n+=A
 //   }
 //   console.log(Q(j)?"Prime":"Not!!")
-// })("3")
+// }
 
 // uglifyjs
-A="0",P=[A+A],j=0,function(a){function b(a){for(i=0;p=P[i++];){if(t=p,k=p.length,k>=a)return a==k;for(;t.length<a;)t+=p;if(t.length==a)return}return 1}if(n=A,a!=A)for(;j=n.length,j+""!==a;)b(j)&&P.push(n),n+=A;console.log(b(j)?"Prime":"Not!!")}("3");
+function N(a){function b(a){for(i=0;p=P[i++];){if(t=p,k=p.length,k>=a)return a==k;for(;t.length<a;)t+=p;if(t.length==a)return}return 1}if(n=A,a!=A)for(;j=n.length,j+""!==a;)b(j)&&P.push(n),n+=A;console.log(b(j)?"Prime":"Not!!")}A="0",P=[A+A],j=0
+
+for(var X=0;X<10;X++) {
+  console.log('checking: ' + X);
+  N(X.toString());
+}
