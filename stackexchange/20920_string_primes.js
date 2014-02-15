@@ -1,8 +1,9 @@
+// http://codegolf.stackexchange.com/questions/20920/is-it-a-prime-w-o-math
+
+/*
 function isPrime(val) {
-  var len = val.length;
   var primes = ["22"];
   function _isPrime(str) {
-
     for(i=0; i<primes.length; i++) {
       tsr = prime = primes[i];
       if(str.length < prime.length) return false;
@@ -21,9 +22,40 @@ function isPrime(val) {
     }
     nstr += "x";
   }
-console.log(primes);
   return _isPrime(nstr) ? "Prime" : "Not!!";
 }
+*/
 
-for(var x=1; x<10;x++)
-  console.log("checking: %j and result: %j", x, isPrime(x.toString()));
+/*
+ A=spacer
+ P=primes
+ Q=isPrime Function
+ i=some number
+ j=some number
+ k=some number
+ n=some string
+ p=some prime number
+ q=some number to test
+ t=tempory number
+ */
+
+A="0",P=[A+A],j=0,
+(function (v){
+  function Q(q) {
+    i=0
+    while(p=P[i++]) {
+      t=p,k=p.length
+      if(q<=k)return q==k;
+      while(t.length<q)t+=p
+      if(t.length==q)return;
+    }
+    return 1
+  }
+  n=A
+  if(v!=A)
+  while(j=n.length,j+""!==v){
+    Q(j)&&P.push(n)
+    n+=A
+  }
+  console.log(Q(j)?"Prime":"Not!!")
+})("3")
