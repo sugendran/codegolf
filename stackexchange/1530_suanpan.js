@@ -1,3 +1,5 @@
+// http://codegolf.stackexchange.com/questions/1530/draw-a-suanpan-abacus
+
 function render(n) {
   var top_dict = {
     0: "0011",
@@ -19,16 +21,20 @@ function render(n) {
       top++;
       v-=5;
     }
-    return [top_dict[top],bottom_dict[v]];
+    return top_dict[top] + bottom_dict[v];
   });
   console.log(cols);
+  var rows = [];
+  for(var i=0;i<14;i++) {
+    rows[i] = cols.reduce(function(str, val){
+      return val + str[i];
+    },"");
+  }
+  console.log(rows);
   var tile   = "(__)";
   var spacer = " || ";
 }
 
 render(314159);
 
-
-/*
-
-*/
+//render(6302715408);
