@@ -26,6 +26,8 @@ function isPrime(val) {
 }
 */
 
+// by hand
+
 /*
  A=spacer
  P=primes
@@ -39,23 +41,26 @@ function isPrime(val) {
  t=tempory number
  */
 
-A="0",P=[A+A],j=0,
-(function (v){
-  function Q(q) {
-    i=0
-    while(p=P[i++]) {
-      t=p,k=p.length
-      if(q<=k)return q==k;
-      while(t.length<q)t+=p
-      if(t.length==q)return;
-    }
-    return 1
-  }
-  n=A
-  if(v!=A)
-  while(j=n.length,j+""!==v){
-    Q(j)&&P.push(n)
-    n+=A
-  }
-  console.log(Q(j)?"Prime":"Not!!")
-})("3")
+// A="0",P=[A+A],j=0,
+// (function (v){
+//   function Q(q) {
+//     i=0
+//     while(p=P[i++]) {
+//       t=p,k=p.length
+//       if(q<=k)return q==k;
+//       while(t.length<q)t+=p
+//       if(t.length==q)return;
+//     }
+//     return 1
+//   }
+//   n=A
+//   if(v!=A)
+//   while(j=n.length,j+""!==v){
+//     Q(j)&&P.push(n)
+//     n+=A
+//   }
+//   console.log(Q(j)?"Prime":"Not!!")
+// })("3")
+
+// uglifyjs
+A="0",P=[A+A],j=0,function(a){function b(a){for(i=0;p=P[i++];){if(t=p,k=p.length,k>=a)return a==k;for(;t.length<a;)t+=p;if(t.length==a)return}return 1}if(n=A,a!=A)for(;j=n.length,j+""!==a;)b(j)&&P.push(n),n+=A;console.log(b(j)?"Prime":"Not!!")}("3");
